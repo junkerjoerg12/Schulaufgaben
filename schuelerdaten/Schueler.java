@@ -9,31 +9,26 @@ public class Schueler {
     private String nachname;
     private Klasse klasse;
     private static int anzahl;
-    private ArrayList<Kurs> kursListe = new ArrayList<>();
     private Random rand = new Random();
 
     public Schueler(String vorname, String nachname, Klasse klasse){
         this.vorname = vorname;
         this.nachname = nachname;
         this.klasse = klasse;
-        klasse.hinzufuegen(this);
         genarateSNr();
         anzahl++;
     }
 
     private void genarateSNr(){
-        sNr = vorname.substring(0, 1);
-        sNr = sNr + nachname.substring(0, 1);
-        sNr = sNr + rand.nextInt(100000000);
-        this.sNr = sNr;
+        sNr = rand.nextInt(100000000);
     }
 
-    public String getsNr() {
+    public int getsNr() {
         return sNr;
     }
 
     public String getVorname() {
-        return vorname;
+        return vorname; 
     }
 
     public String getNachname() {
@@ -56,7 +51,5 @@ public class Schueler {
         this.klasse = klasse;
     }
 
-    public ArrayList<Kurs> getKursListe() {
-        return kursListe;
-    }
+
 }
