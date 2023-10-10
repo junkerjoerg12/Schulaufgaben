@@ -1,20 +1,28 @@
 package vererbung;
 
-public class Kinoticket extends Ticket{
+public class KinoTicket extends Ticket{
 
-    private int filmlaenge;
+    protected int filmlaenge;
 
-    public Kinoticket(String ort, String name, int basispreis, int filmleange) {
+    public KinoTicket(String ort, String name, int basispreis, int filmleange) {
         super(ort, name, basispreis);
         this.filmlaenge= filmleange;
     }
 
     @Override
-    public double berechnePreis() {
+    public double berechneTicketPreis() {
         if(filmlaenge>150){
             ticketpreis= basispreis+3;
         }
         return ticketpreis;
+    }
+
+    @Override
+    public void printTicketdaten() {
+        System.out.println("Veranstaltungsort: "+ veranstaltungsort);
+        System.out.println("Eventname: "+eventname) ;
+        System.out.println("Filmlänge: "+ filmlaenge);
+        
     }
     
 }

@@ -13,11 +13,7 @@ public abstract class Ticket {
 
     }
 
-    public void druckeTicket(){
-        System.out.println(this.toString());
-    }
+    public abstract double berechneTicketPreis();
 
-    public abstract double berechnePreis();
-
-    
+    public abstract void printTicketdaten();             
 }
