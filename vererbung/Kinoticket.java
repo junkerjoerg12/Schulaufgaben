@@ -11,6 +11,7 @@ public class KinoTicket extends Ticket{
 
     @Override
     public double berechneTicketPreis() {
+        ticketpreis= basispreis;
         if(filmlaenge>150){
             ticketpreis= basispreis+3;
         }
