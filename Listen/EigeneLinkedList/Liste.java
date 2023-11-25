@@ -16,11 +16,27 @@ public class Liste {
         return true;
     }
 
-    public boolean add(int index, Object o) {
-        anzahlObjekte++;
+    // fügt das übergebene Objekt an der übergebenen Stelle ein, staret bei 0
+    public boolean add(Object o, int index) {
+        // wenn der angegeben Index größer als die List ist wird das Objekt an letzter
+        // stelle hinzugefügt
+        if (index >= (anzahlObjekte++)) {
+            add(o);
+        } else {
+            if (index == 0) {
+                ListenObject temp;
+                temp = start;
+                start = new ListenObject(o);
+                start.setNachfolger(temp);
+            } else {
+                start.add(o, --index);
+            }
+            anzahlObjekte++;
+        }
         return true;
     }
 
+    // fügt das übegebene Objekt an der Letzten stelle hinzu
     public boolean add(Object o) {
         if (start == null) {
             start = new ListenObject(o);
@@ -33,10 +49,11 @@ public class Liste {
 
     public void print() {
         if (start == null) {
-            System.out.println("No objects foudn in this list");
+            System.out.println("No objects found in this list");
         } else {
             start.print();
         }
+        System.out.println("\n");
     }
 
 }

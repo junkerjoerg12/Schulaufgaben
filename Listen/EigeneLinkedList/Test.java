@@ -15,6 +15,12 @@ public class Test {
         liste.add(new TestObjekt(8));
         liste.add(new TestObjekt(12));
         liste.print();
+        liste.add(new TestObjekt(13), 2);
+        liste.print();
+        liste.add(new TestObjekt(420), 11);
+        liste.print();
+        liste.add(new TestObjekt(0), 0);
+        liste.print();
 
     }
 }

@@ -33,6 +33,20 @@ public class ListenObject {
         } else {
             nachfolger.add(o);
         }
+        return true;
+    }
+
+    public boolean add(Object o, int index) {
+        if (index == 0) {
+            ListenObject tempNachfolger;
+            ListenObject tempVorgaenger;
+            tempNachfolger = nachfolger;
+            tempVorgaenger = vorgaenger;
+            nachfolger = new ListenObject(o);
+            nachfolger.setNachfolger(tempNachfolger);
+        } else {
+            nachfolger.add(o, --index);
+        }
 
         return true;
     }
@@ -53,6 +67,10 @@ public class ListenObject {
         if (nachfolger != null) {
             nachfolger.print();
         }
+    }
+
+    public void setNachfolger(ListenObject o) {
+        nachfolger = o;
     }
 
 }
