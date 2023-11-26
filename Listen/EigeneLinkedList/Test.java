@@ -16,12 +16,12 @@ public class Test {
         liste.add(new TestObjekt(8));
         liste.add(new TestObjekt(9));
         liste.print();
-        // liste.add(new TestObjekt(10), 2);
+        liste.add(new TestObjekt(10), 2);
         // liste.print();
         // liste.add(new TestObjekt(1), 11);
         // liste.print();
         // liste.add(new TestObjekt(12), 0);
-        // liste.print();
+        liste.print();
 
         System.out.println("\n");
         liste.print(8);

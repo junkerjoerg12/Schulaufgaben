@@ -66,6 +66,7 @@ public class Liste {
         }
     }
 
+    // Printet die gesamte Liste
     public void print() {
         if (start == null) {
             System.out.println("No objects found in this list");
@@ -75,10 +76,12 @@ public class Liste {
         System.out.println("\n");
     }
 
+    // printet das Element an der Übergebenen Stelle
     public void print(int index) {
         start.print(index);
     }
 
+    // gibt das Objekt an übergeber Stelle zurück
     public Object get(int index) {
         return start.get(index);
     }
