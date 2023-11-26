@@ -11,9 +11,19 @@ public class Liste {
         this.start = start;
     }
 
+    // Löscht das Objekt an übergebener Stelle aus der Liste
     public boolean remove(int index) {
+        if (index == 0) {
+            start = start.getNachfolger();
+        } else {
+            start.remove(--index);
+        }
         anzahlObjekte--;
         return true;
+    }
+
+    public void remove(Object o) {
+
     }
 
     // fügt das übergebene Objekt an der übergebenen Stelle ein, staret bei 0
@@ -45,6 +55,14 @@ public class Liste {
         }
         anzahlObjekte++;
         return true;
+    }
+
+    public ListenObject getLast() {
+        if (start != null) {
+            return start.getLast();
+        } else {
+            return null;
+        }
     }
 
     public void print() {

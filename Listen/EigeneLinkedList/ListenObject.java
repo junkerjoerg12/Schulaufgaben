@@ -8,15 +8,18 @@ public class ListenObject {
         this.nachfolger = nachfolger;
         this.vorgaenger = vorgaenger;
         this.ptrTo = ptrTo;
+        System.out.println(vorgaenger);
     }
 
     public ListenObject(ListenObject vorgaenger, Object ptrTo) {
         this.vorgaenger = vorgaenger;
         this.ptrTo = ptrTo;
+        System.out.println(vorgaenger);
     }
 
     public ListenObject(Object ptrTo) {
         this.ptrTo = ptrTo;
+        System.out.println(vorgaenger);
     }
 
     public ListenObject getNext() {
@@ -25,6 +28,15 @@ public class ListenObject {
 
     public ListenObject getPrevious() {
         return vorgaenger;
+    }
+
+    public void remove(int index) {
+        if (index == 0) {
+            vorgaenger.setNachfolger(nachfolger);
+            nachfolger.setVorgaenger(vorgaenger);
+        } else {
+            nachfolger.remove(--index);
+        }
     }
 
     public boolean add(Object o) {
@@ -62,6 +74,13 @@ public class ListenObject {
         }
     }
 
+    public ListenObject getLast() {
+        if (nachfolger == null) {
+            return this;
+        } else
+            return nachfolger.getLast();
+    }
+
     public void print() {
         System.out.println(ptrTo);
         if (nachfolger != null) {
@@ -73,4 +92,11 @@ public class ListenObject {
         nachfolger = o;
     }
 
+    public ListenObject getNachfolger() {
+        return nachfolger;
+    }
+
+    public void setVorgaenger(ListenObject o) {
+        vorgaenger = o;
+    }
 }
