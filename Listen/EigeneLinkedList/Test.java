@@ -30,5 +30,9 @@ public class Test {
         liste.remove(8);
         liste.print();
 
+        System.out.println(liste.get(0));
+        System.out.println(liste.get(1));
+        System.out.println(liste.get(2));
+
     }
 }

@@ -79,4 +79,8 @@ public class Liste {
         start.print(index);
     }
 
+    public Object get(int index) {
+        return start.get(index);
+    }
+
 }
