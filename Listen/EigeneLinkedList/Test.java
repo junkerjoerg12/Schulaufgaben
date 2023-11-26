@@ -24,10 +24,10 @@ public class Test {
         // liste.print();
 
         System.out.println("\n");
-        liste.print(5);
+        liste.print(8);
         System.out.println("\n");
 
-        liste.remove(5);
+        liste.remove(8);
         liste.print();
 
     }

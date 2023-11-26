@@ -8,18 +8,15 @@ public class ListenObject {
         this.nachfolger = nachfolger;
         this.vorgaenger = vorgaenger;
         this.ptrTo = ptrTo;
-        System.out.println(vorgaenger);
     }
 
     public ListenObject(ListenObject vorgaenger, Object ptrTo) {
         this.vorgaenger = vorgaenger;
         this.ptrTo = ptrTo;
-        System.out.println(vorgaenger);
     }
 
     public ListenObject(Object ptrTo) {
         this.ptrTo = ptrTo;
-        System.out.println(vorgaenger);
     }
 
     public ListenObject getNext() {
@@ -32,11 +29,15 @@ public class ListenObject {
 
     public void remove(int index) {
         if (index == 0) {
-            System.out.println("yes yes");
-            vorgaenger.setNachfolger(nachfolger);
-            nachfolger.setVorgaenger(vorgaenger);
+            if (nachfolger == null) {
+                vorgaenger.setNachfolger(null);
+            } else {
+                vorgaenger.setNachfolger(nachfolger);
+                nachfolger.setVorgaenger(vorgaenger);
+            }
+        } else if (nachfolger == null) {
+            System.out.println("Kein Objekt an der Stelle Gefunden");
         } else {
-            System.out.println("no no");
             nachfolger.remove(--index);
         }
     }

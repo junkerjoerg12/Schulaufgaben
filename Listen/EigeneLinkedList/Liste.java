@@ -13,11 +13,12 @@ public class Liste {
 
     // Löscht das Objekt an übergebener Stelle aus der Liste
     public boolean remove(int index) {
-        if (index == 0) {
-            start = start.getNachfolger();
-        } else {
-            start.remove(--index);
-        }
+        // if (index == 0) {
+        // start = start.getNachfolger();
+        // } else {
+        // start.remove(index);
+        // }
+        start.remove(index);
         anzahlObjekte--;
         return true;
     }
