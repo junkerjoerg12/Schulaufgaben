@@ -74,4 +74,8 @@ public class Liste {
         System.out.println("\n");
     }
 
+    public void print(int index) {
+        start.print(index);
+    }
+
 }

@@ -32,16 +32,18 @@ public class ListenObject {
 
     public void remove(int index) {
         if (index == 0) {
+            System.out.println("yes yes");
             vorgaenger.setNachfolger(nachfolger);
             nachfolger.setVorgaenger(vorgaenger);
         } else {
+            System.out.println("no no");
             nachfolger.remove(--index);
         }
     }
 
     public boolean add(Object o) {
         if (nachfolger == null) {
-            nachfolger = new ListenObject(o);
+            nachfolger = new ListenObject(this, o);
         } else {
             nachfolger.add(o);
         }
@@ -54,7 +56,7 @@ public class ListenObject {
             ListenObject tempVorgaenger;
             tempNachfolger = nachfolger;
             tempVorgaenger = vorgaenger;
-            nachfolger = new ListenObject(o);
+            nachfolger = new ListenObject(tempVorgaenger, tempNachfolger, o);
             nachfolger.setNachfolger(tempNachfolger);
         } else {
             nachfolger.add(o, --index);
@@ -85,6 +87,14 @@ public class ListenObject {
         System.out.println(ptrTo);
         if (nachfolger != null) {
             nachfolger.print();
+        }
+    }
+
+    public void print(int index) {
+        if (index == 0) {
+            System.out.println(ptrTo);
+        } else {
+            nachfolger.print(--index);
         }
     }
 
