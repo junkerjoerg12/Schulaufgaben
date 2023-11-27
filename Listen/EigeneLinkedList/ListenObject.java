@@ -119,9 +119,12 @@ public class ListenObject {
     public Object get(int index) {
         if (index == 0) {
             return ptrTo;
-        } else {
+        } else if (nachfolger != null) {
             return nachfolger.get(--index);
+        } else {
+            return null;
         }
+
     }
 
     public void setNachfolger(ListenObject o) {

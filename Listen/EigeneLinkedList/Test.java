@@ -5,6 +5,7 @@ public class Test {
 
     public static void main(String[] args) {
         Liste liste = new Liste();
+        Liste liste2 = new Liste();
 
         liste.add(new TestObjekt(1));
         liste.add(new TestObjekt(2));
@@ -30,9 +31,13 @@ public class Test {
         liste.remove(8);
         liste.print();
 
-        System.out.println(liste.get(0));
-        System.out.println(liste.get(1));
-        System.out.println(liste.get(2));
+        liste2.add(new TestObjekt(100));
+        liste2.add(new TestObjekt(101));
+        liste2.add(new TestObjekt(102));
+        liste2.add(new TestObjekt(103));
+
+        liste.add(liste2);
+        liste.print();
 
     }
 }

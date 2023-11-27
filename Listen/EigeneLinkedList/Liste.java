@@ -47,6 +47,18 @@ public class Liste {
         return true;
     }
 
+    // fügt die Übergebene Liste an das Ende der Liste
+    public boolean add(Liste l) {
+        // Erstes Objekt der Übergebenen LIste wird zum Nahcfolger dieser Liste
+        getLast().setNachfolger(l.start);
+        // Letstes Objekt dieser Liste wird zum Vorgengär des ersten objekts
+        // der übergebenen Liste
+        l.start.setVorgaenger(getLast().getNachfolger());
+        // gesamtanzahl der enthaltenen Objekte wird berechnet
+        anzahlObjekte += l.getAnzahlObjekte();
+        return true;
+    }
+
     // fügt das übegebene Objekt an der Letzten stelle hinzu
     public boolean add(Object o) {
         if (start == null) {
@@ -84,6 +96,10 @@ public class Liste {
     // gibt das Objekt an übergeber Stelle zurück
     public Object get(int index) {
         return start.get(index);
+    }
+
+    public int getAnzahlObjekte() {
+        return anzahlObjekte;
     }
 
 }
