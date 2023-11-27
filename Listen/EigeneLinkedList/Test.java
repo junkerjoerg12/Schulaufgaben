@@ -6,6 +6,7 @@ public class Test {
     public static void main(String[] args) {
         Liste liste = new Liste();
         Liste liste2 = new Liste();
+        Liste liste3 = new Liste();
 
         liste.add(new TestObjekt(1));
         liste.add(new TestObjekt(2));
@@ -37,6 +38,13 @@ public class Test {
         liste2.add(new TestObjekt(103));
 
         liste.add(liste2);
+        liste.print();
+
+        liste3.add(new TestObjekt(199));
+        liste3.add(new TestObjekt(198));
+        liste3.add(new TestObjekt(197));
+
+        liste.add(liste3, 0);
         liste.print();
 
     }

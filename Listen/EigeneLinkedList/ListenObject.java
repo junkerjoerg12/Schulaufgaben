@@ -60,19 +60,31 @@ public class ListenObject {
             // Nachfolger des Objekts wird zwischengespeichert
             ListenObject tempNachfolger;
             tempNachfolger = nachfolger;
-
             // dem neu erstellten Objekt wird this als vorgänger und der
             // Zwischengespeicherte nachfolger als nachfolger übergeben
             nachfolger = new ListenObject(this, tempNachfolger, o);
-
-            //
             // nachfolger.setNachfolger(tempNachfolger);
-
             // sonst funktion im folgeogjekt aufrufen
         } else {
             nachfolger.add(o, --index);
         }
+        return true;
+    }
 
+    public boolean add(Liste l, int index) {
+
+        if (index == 0) {
+            try {
+                l.getStart().setVorgaenger(vorgaenger);
+                l.getLast().setNachfolger(this);
+                vorgaenger.setNachfolger(l.getStart());
+            } catch (NullPointerException e) {
+                System.out.println("bitte nicht an stelle 0, das klappt nicht ");
+            }
+
+        } else {
+            nachfolger.add(l, --index);
+        }
         return true;
     }
 
