@@ -37,7 +37,6 @@ public class Test {
         liste2.add(new TestObjekt(102));
         liste2.add(new TestObjekt(103));
 
-        liste.add(liste2);
         liste.print();
 
         liste3.add(new TestObjekt(199));

@@ -111,4 +111,8 @@ public class Liste {
         return start;
     }
 
+    public int lenght() {
+        return anzahlObjekte;
+    }
+
 }
