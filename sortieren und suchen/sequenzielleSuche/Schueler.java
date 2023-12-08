@@ -1,4 +1,4 @@
-package bubblesort;
+package sequenzielleSuche;
 
 public class Schueler {
   String nachname;

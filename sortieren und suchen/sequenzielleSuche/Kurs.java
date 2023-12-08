@@ -1,4 +1,4 @@
-package bubblesort;
+package sequenzielleSuche;
 
 import java.util.ArrayList;
 
