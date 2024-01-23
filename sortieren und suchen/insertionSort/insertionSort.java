@@ -1,5 +1,3 @@
-package insertionSort;
-
 import java.util.Random;
 
 public class insertionSort {
