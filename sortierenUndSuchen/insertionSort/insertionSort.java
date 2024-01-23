@@ -1,4 +1,4 @@
-package sortierenUndSuchen.insertionSort;
+package insertionSort;
 
 import java.util.Random;
 
