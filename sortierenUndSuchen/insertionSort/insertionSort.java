@@ -1,3 +1,5 @@
+package sortierenUndSuchen.insertionSort;
+
 import java.util.Random;
 
 public class insertionSort {
