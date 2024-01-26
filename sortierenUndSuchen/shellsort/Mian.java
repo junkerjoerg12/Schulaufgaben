@@ -18,41 +18,34 @@ public class Mian {
     }
     System.out.println("\n");
     arr = shellsort(arr);
+    System.err.println("sortiert: ");
     for (int i = 0; i < arr.length; i++) {
       System.out.print(arr[i] + " ");
     }
   }
 
   private static int[] shellsort(int[] arr) {
-    int distanz = 1;
-    int length = arr.length;
-    while (distanz < length) {
-      distanz = 3 * distanz + 1;
-    }
+    // int distanz = 1;
+    // int length = arr.length;
+    // while (distanz < length) {
+    // distanz = 3 * distanz + 1;
+    // }
 
-    while (distanz >= 1) {
-      System.err.println("h = " + distanz);
-      distanz = (distanz - 1) / 3;
-      for (int f = 0; f < distanz; f++) {
+    // while (distanz >= 1) {
+    // int n = arr.length;
+    int n = arr.length;
 
-        int momentanesElement = f + distanz;
-
-        while (momentanesElement < length) {
-
-          int temp = arr[momentanesElement];
-          int einfuegeposition = momentanesElement - distanz;
-
-          while (einfuegeposition > f && arr[einfuegeposition] > temp) {
-            arr[einfuegeposition + distanz] = arr[einfuegeposition];
-            einfuegeposition -= distanz;
-
-          }
-          arr[einfuegeposition] = temp;
-          momentanesElement += distanz;
+    for (int gap = n / 2; gap > 0; gap /= 2) {
+      for (int i = gap; i < n; i++) {
+        int key = arr[i];
+        int j = i;
+        while (j >= gap && arr[j - gap] > key) {
+          arr[j] = arr[j - gap];
+          j -= gap;
         }
+        arr[j] = key;
       }
     }
     return arr;
   }
-
 }
