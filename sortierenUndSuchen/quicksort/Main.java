@@ -1,11 +1,12 @@
 package quicksort;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
   public static void main(String[] args) {
-    // int length = Integer.MIN_VALUE;
-    int[] arr = new int[1000000];
+    int length = Integer.MAX_VALUE;
+    int[] arr = new int[length];
     Random rand = new Random();
 
     for (int i = 0; i < arr.length; i++) {
@@ -13,7 +14,9 @@ public class Main {
     }
     // printArr(arr);
     long start = System.currentTimeMillis();
-    arr = sort(arr, 0, arr.length - 1);
+    Arrays.sort(arr);
+
+    // arr = sort(arr, 0, arr.length - 1);
     // printArr(arr);
     System.out.println("in nur " + (System.currentTimeMillis() - start) + "millis sortiert");
   }
