@@ -20,8 +20,6 @@ public class Main {
     thread2.start();
     // thread1.
 
-    thread1.interrupt();
-    thread2.interrupt();
   }
 
 }
