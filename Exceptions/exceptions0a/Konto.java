@@ -24,8 +24,12 @@ public class Konto {
     guthaben += betrag;
   }
 
-  public void abheben(double betrag) {
-    guthaben -= betrag;
+  public void abheben(double betrag) throws Exception {
+    if (guthaben - betrag < 0) {
+      throw new Exception("So viel Geld ist nicht mehr da");
+    } else {
+      guthaben -= betrag;
+    }
   }
 
   public String toString() {

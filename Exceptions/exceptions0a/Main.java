@@ -9,8 +9,18 @@ public class Main {
 
     Konto konto = new Konto(x);
     konto.einzahlen(50000);
-    konto.abheben(2000);
-    konto.abheben(2093);
+    try {
+      konto.abheben(2000);
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    try {
+      konto.abheben(2093);
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
     try {
       System.out.println(konto.toString());
     } catch (NullPointerException e) {
